@@ -15,22 +15,22 @@
 
 [diff]
 	log = true
-    tool = code # the tool used by git-difftool cli
+	tool = code # the tool used by git-difftool cli
 [difftool]
 	prompt = false
 [difftool "code"]
-    cmd = code --wait --diff $LOCAL $REMOTE
+	cmd = code --wait --diff $LOCAL $REMOTE
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 
 [merge]
 	log = true
-    tool = code # the tool used by git-mergetool cli
+	tool = code # the tool used by git-mergetool cli
 [mergetool]
 	prompt = false
 [mergetool "code"]
-    cmd = code --wait $MERGED
+	cmd = code --wait $MERGED
 	trustExitCode = true
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
