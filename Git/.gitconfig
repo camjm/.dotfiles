@@ -1,40 +1,40 @@
-#C:\Users\Cam\.gitconfig
+#~/.gitconfig
 
 [user]
 	name = <%= name %>
 	email = <%= email %>
 [core]
 	autocrlf = true
+	editor = code --wait
 	excludesfile = ~/.gitignore_global
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 [push]
 	default = simple
-[credential]
-	helper = manager
-
+[commit]
+	template = ~/.stCommitMsg
 
 [diff]
-	tool = tortoisemerge # controls which tool is used by git-difftool cli
+	log = true
+    tool = code # the tool used by git-difftool cli
 [difftool]
 	prompt = false
-[difftool "tortoisemerge"]
-	cmd = 'C:/Program Files/TortoiseSVN/bin/TortoiseMerge.exe' \"$LOCAL\" \"$REMOTE\"
-[difftool "sourcetree"] # difftool that SourceTree uses
-	cmd = 'C:/Program Files/TortoiseSVN/bin/TortoiseMerge.exe' \"$LOCAL\" \"$REMOTE\"
-
+[difftool "code"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 
 [merge]
 	log = true
-	tool = tortoisemerge # controls which tool is used by git-mergetool cli
+    tool = code # the tool used by git-mergetool cli
 [mergetool]
 	prompt = false
-[mergetool "tortoisemerge"]
-	cmd = 'C:/Program Files/TortoiseSVN/bin/TortoiseMerge.exe'  -base:\"$BASE\" -mine:\"$LOCAL\" -theirs:\"$REMOTE\" -merged:\"$MERGED\"
-	trustexitcode = true
-[mergetool "sourcetree"] # mergetool that SourceTree uses
-	cmd = 'C:/Program Files/TortoiseSVN/bin/TortoiseMerge.exe'  -base:\"$BASE\" -mine:\"$LOCAL\" -theirs:\"$REMOTE\" -merged:\"$MERGED\"
-	trustexitcode = true
-
+[mergetool "code"]
+    cmd = code --wait $MERGED
+	trustExitCode = true
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 
 [alias]
 	br = branch -vv
@@ -47,7 +47,6 @@
 	rb = rbranch
 	rv = review
 	st = status -s
-
 
 [color]
 	ui = auto
