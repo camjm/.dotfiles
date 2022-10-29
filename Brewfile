@@ -1,6 +1,11 @@
+## taps are repositories where Homebrew keeps it's own software
+
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+
+## brews are tools used in the shell
+
 # Unix shell
 brew "zsh"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -27,5 +32,10 @@ brew "readline"
 brew "ruby-install"
 # Tracks most-used directories to make cd smarter
 brew "z"
+
+## casks are full applications 
+
 # Command-line shell and scripting language
 cask "powershell"
+# Open-source code editor
+cask "visual-studio-code"
