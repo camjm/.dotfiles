@@ -1,8 +1,8 @@
 #~/.gitconfig
 
 [user]
-	name = <%= name %>
-	email = <%= email %>
+	name = Cam
+	email = 2276730+camjm@users.noreply.github.com
 [core]
 	autocrlf = true
 	editor = code --wait
@@ -64,3 +64,9 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
