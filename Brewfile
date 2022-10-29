@@ -1,6 +1,8 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+# Unix shell
+brew zsh
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
 # Parser generator
