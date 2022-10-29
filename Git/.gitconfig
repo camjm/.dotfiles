@@ -4,7 +4,7 @@
 	name = Cam
 	email = 2276730+camjm@users.noreply.github.com
 [core]
-	autocrlf = false
+	autocrlf = input
 	editor = code --wait
 	excludesfile = ~/.gitignore_global
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
